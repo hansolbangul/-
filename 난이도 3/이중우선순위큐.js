@@ -3,7 +3,7 @@
 function solution(operations) {
   var answer = [];
 
-  operations.map((item) => {
+  operations.forEach((item) => {
     var arr = item.split(" ");
     if (arr[0] === "D" && answer.length > 0) {
       if (Number(arr[1]) > 0) {
