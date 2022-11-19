@@ -19,3 +19,27 @@ function solution(tickets) {
 
   return queue.sort()[0];
 }
+
+// function solution(tickets) {
+//   var answer = [], length = tickets.length;
+//   let visited = Array.from({length: length}, () => 0)
+  
+//   const dfs = (v, target, routes) => {
+//       if(v === length) {
+//           answer.push(routes)
+//       } else {
+//           for(let i = 0; i < length; i++){
+//               const [start, end] = tickets[i]
+//               if(!visited[i] && target === start){
+//                   visited[i] = 1
+//                   dfs(v + 1, end, [...routes, end])
+//                   visited[i] = 0
+//               }
+//           }
+//       }
+//   }
+  
+//   dfs(0, 'ICN' , ["ICN"])
+  
+//   return answer.sort()[0];
+// }
