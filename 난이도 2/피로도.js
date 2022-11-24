@@ -1,4 +1,4 @@
-// 난이도 2, 피로도
+// 난이도 2, 피로도 
 function solution(k, dungeons) {
   var answer = [];
   const visited = Array.from({ length: dungeons.length }, () => 0)
