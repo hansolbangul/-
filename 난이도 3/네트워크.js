@@ -1,23 +1,23 @@
-// 난이도 3, 네트워크
+// 난이도 3, 네트워크 
 function solution(n, computers) {
   let answer = 0;
   // 방문기록
-  let visited = Array.from({length: n}, () => false)
-  
+  let visited = Array.from({ length: n }, () => false)
+
   const dfs = (index) => {
     // 여기서 visited를 true하는 이유는 computers[index]에 해당하는 array중에 1인 (연결된) 네트워크들을 모두 재귀를 통해 true로 변경해주기 위해
     // 그렇게 한다면, 19라인에서 이미 연결되었다고 생각한 네트워크는 생략하고 진행할 수있음.
     visited[index] = true
 
-    for(let i = 0; i<computers[index].length; i++){
-      if(computers[index][i] && !visited[i]){
+    for (let i = 0; i < computers[index].length; i++) {
+      if (computers[index][i] && !visited[i]) {
         dfs(i)
       }
     }
   }
 
-  for(let i = 0; i < computers.length; i++){
-    if(!visited[i]){
+  for (let i = 0; i < computers.length; i++) {
+    if (!visited[i]) {
       dfs(i)
       answer++
     }
@@ -27,8 +27,8 @@ function solution(n, computers) {
 }
 
 
-console.log(solution(3, [[1, 1, 0], [1, 1, 0], [0, 0, 1]]	));
-console.log(solution(3,	[[1, 1, 0], [1, 1, 1], [0, 1, 1]]));
+console.log(solution(3, [[1, 1, 0], [1, 1, 0], [0, 0, 1]]));
+console.log(solution(3, [[1, 1, 0], [1, 1, 1], [0, 1, 1]]));
 
 // 문제 설명
 // 네트워크란 컴퓨터 상호 간에 정보를 교환할 수 있도록 연결된 형태를 의미합니다. 예를 들어, 컴퓨터 A와 컴퓨터 B가 직접적으로 연결되어있고, 컴퓨터 B와 컴퓨터 C가 직접적으로 연결되어 있을 때 컴퓨터 A와 컴퓨터 C도 간접적으로 연결되어 정보를 교환할 수 있습니다. 따라서 컴퓨터 A, B, C는 모두 같은 네트워크 상에 있다고 할 수 있습니다.
