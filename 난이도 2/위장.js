@@ -1,4 +1,4 @@
-// 난이도 2, 위장
+// 난이도 2, 위장 
 function solution(clothes) {
   let map = {}
   let answer = 1
